@@ -1,6 +1,7 @@
-@use "helpers" as *;
+@use 'helpers' as *;
 
 body {
+
   @include fluid-text(18, 14);
 
   font-family: var(--font-family-base);
@@ -44,7 +45,7 @@ h5,
 
 h1,
 .h1 {
-  @include fluid-text(10, 30);
+  @include fluid-text(70, 30);
   line-height: 1.2;
 }
 h2,

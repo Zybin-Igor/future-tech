@@ -4,6 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"dependencies": {
+		"@a1rth/css-normalize": "^1.2.4",
 		"braces": "^3.0.3",
 		"chokidar": "^4.0.3",
 		"detect-libc": "^1.0.3",
