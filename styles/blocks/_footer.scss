@@ -1,0 +1,28 @@
+@use "../helpers/" as *;
+
+.footer {
+&-body {
+	padding-block: fluid(80, 40);
+	border-bottom: var(--border);
+}
+
+&-menu {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	align-items: start;
+	column-gap: fluid(80, 20);
+
+	&-column {
+		display: grid;
+		row-gap: fluid(36, 16);
+	}
+
+	&-list {
+		display: flex;
+		flex-direction: column;
+		row-gap: fluid(18, 8);
+	}
+
+
+}
+}

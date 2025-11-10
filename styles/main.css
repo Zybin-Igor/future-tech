@@ -449,4 +449,28 @@ button[aria-label]::before {
   }
 }
 
+.footer-body {
+  padding-block: clamp(2.5rem, 1.862745098rem + 2.614379085vw, 5rem);
+  border-bottom: var(--border);
+}
+.footer-menu {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: start;
+  column-gap: clamp(1.25rem, 0.2941176471rem + 3.9215686275vw, 5rem);
+}
+.footer-menu-column {
+  display: grid;
+  row-gap: clamp(1rem, 0.681372549rem + 1.3071895425vw, 2.25rem);
+}
+.footer-menu-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(0.5rem, 0.3406862745rem + 0.6535947712vw, 1.125rem);
+}
+
+.header {
+  display: none !important;
+}
+
 /*# sourceMappingURL=main.css.map */
