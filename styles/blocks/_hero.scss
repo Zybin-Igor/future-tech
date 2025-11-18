@@ -1,0 +1,66 @@
+@use "../helpers/" as *;
+
+.hero {
+	&_main {
+		display: grid;
+		grid-template-columns: 60% auto;
+		grid-template-areas:
+		'body resources-preview'
+		'metrics resources-preview';
+	}
+
+&_body {
+	grid-area: body;
+	padding-top: rem(150);
+	padding-right: rem(50);
+	padding-bottom: rem(100);
+}
+
+&_subtitle {
+	@include fluid-text(30, 18);
+	font-family: var(--font-family-accent);
+	font-weight: 500;
+	color: var(--color-dark-40);
+
+	&:not(:last-child) {
+		margin-bottom: rem(30);
+	}
+}
+
+&_title {
+	&:not(:last-child) {
+		margin-bottom: rem(20);
+	}
+}
+
+&_metrics {
+	grid-area: metrics;
+}
+&_resources-preview {
+	grid-area: resources-preview;
+	padding-left: rem(80);
+	padding-bottom: rem(80);
+	border-left: var(--border);
+	background: 
+	url(../../images/resources-preview/bg.png) 0 0/cover no-repeat;
+}
+&_advantages {
+	&-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	&-item {
+		--paddingX: #{rem(80)};
+		padding-block: rem(50);
+
+		&:not(:first-child) {
+			padding-left: var(--paddingX);
+		}
+		&:not(:last-child) {
+			padding-right: var(--paddingX);
+			border-right: var(--border);
+		}
+	}
+}
+}
