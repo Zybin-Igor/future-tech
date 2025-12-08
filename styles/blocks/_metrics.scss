@@ -1,7 +1,7 @@
 @use "../helpers/" as *;
 
 .metrics {
-	&_list {
+		&_list {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 	}
