@@ -1,4 +1,4 @@
-@use "../helpers/" as *;
+@use '../helpers/' as *;
 
 .metrics {
 		&_list {
@@ -14,6 +14,12 @@
 		@include laptop {
 			row-gap: rem(2);
 			padding: rem(30) rem(40);
+			
+		}
+
+		@include tablet {
+			row-gap: rem(0);
+			padding: rem(30);
 			
 		}
 

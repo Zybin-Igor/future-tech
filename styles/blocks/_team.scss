@@ -1,4 +1,4 @@
-@use "../helpers/" as *;
+@use '../helpers/' as *;
 
 .team {
 
@@ -13,6 +13,10 @@
 @include laptop {
 	--personImageSize: #{rem(50)};
 	padding: rem(8);
+}
+
+@include tablet {
+	--personImageSize: #{rem(40)};
 }
 
 	&_person {
