@@ -71,6 +71,8 @@ grid-template-areas:
 }
 
 &_description {
+	flex-grow: 1;
+
 	
 	@include mobile {
 		grid-area: description;
@@ -94,6 +96,9 @@ grid-template-areas:
 	@include mobile-above {
 	grid-template-columns: repeat(3, 1fr);
 	}
+}
+&_item {
+	display: flex;
 }
 
 }

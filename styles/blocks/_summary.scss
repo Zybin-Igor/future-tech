@@ -1,0 +1,21 @@
+@use '../helpers/' as *;
+
+.summary {
+	&_list {
+		display: flex;
+		column-gap: fluid(50, 20);
+	}
+
+	&_item {
+		display: grid;
+		row-gap: rem(4);
+
+		@include laptop {
+			row-gap: rem(2);
+		}
+	}
+
+	&_value {
+		color: var(--color-light);
+	}
+}
