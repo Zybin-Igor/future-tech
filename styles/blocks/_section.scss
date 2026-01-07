@@ -40,4 +40,7 @@
 		&_body {
 			border-block: var(--border);
 		}
+		&_link {
+			max-width: rem(360);
+		}
 }
