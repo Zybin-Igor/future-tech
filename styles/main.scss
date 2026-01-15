@@ -5,6 +5,7 @@
 @use 'globals';
 
 // ИСПРАВЬТЕ ЭТИ СТРОКИ:
+@use 'blocks/expandable-content';
 @use 'blocks/icon';          // убрать /styles/
 @use 'blocks/logo';
 @use 'blocks/button';
@@ -48,8 +49,10 @@
 @use 'blocks/video-player';
 @use 'blocks/video-card';
 
+@use 'blocks/table-of-contents';
+@use 'blocks/blog-details';
 // .header,
-// // main > *:not(:last-child),
+// main>*:not(:last-child),
 // .footer {
-// 	display: none !important;
+//     display: none !important;
 // }

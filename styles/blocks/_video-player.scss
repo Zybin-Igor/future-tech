@@ -23,9 +23,9 @@
 		padding: rem(30);
 		transition-duration: var(--transition-duration);
 
-		// &:not(.is-active) {
-		// // 	@include hide;
-		// }
+		&:not(.is-active) {
+			@include hide;
+		}
 
 		&::before {
 			content:'';

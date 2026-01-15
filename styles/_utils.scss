@@ -23,6 +23,7 @@
 }
 
 .full-vw-line {
+
   position: relative;
 
   &::before,
@@ -39,18 +40,21 @@
       bottom: 100%;
     }
   }
+
   &--bottom {
     &::after {
       content: "";
       top: 100%;
     }
   }
+
   &--left {
     &::before,
     &::after {
       right: 100%;
     }
   }
+  
   &--right {
     &::before,
     &::after {
