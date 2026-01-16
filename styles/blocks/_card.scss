@@ -50,6 +50,13 @@
 		&-info {
 			display: grid;
 			row-gap: fluid(16, 6);
+
+			&:has(.card_rating-view) {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				column-gap: 1rem;
+			}
 		}
 	}
 
@@ -83,6 +90,19 @@
 			@include mobile-above {
 			grid-template-columns: auto 1fr;
 
+			}
+		}
+
+		&-3-cols {
+			
+			gap: fluid(50, 20) rem(20);
+
+			@include laptop {
+				column-gap: rem(16);
+			}
+
+			@include mobile-above {
+				grid-template-columns: repeat(3, 1fr);
 			}
 		}
 	}
@@ -133,5 +153,9 @@
 		&-link {
 			grid-area: link;
 		}
+
+	// &-description{
+	// 	color:var(--color-light);
+	// }
 	}
 }

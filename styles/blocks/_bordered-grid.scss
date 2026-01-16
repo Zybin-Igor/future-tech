@@ -1,15 +1,15 @@
 @use "../helpers/" as *;
 
 .bordered-grid {
-  --columns: 1;
-  --itemPaddingY: #{fluid(80, 40)};
+	--columns: 1;
+	--itemPaddingY: #{fluid(80, 40)};
 
-  display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
-	 
+	display: grid;
+	grid-template-columns: repeat(var(--columns), 1fr);
 
-  &-2-cols {
-    --columns: 2;
+
+	&-2-cols {
+		--columns: 2;
 		--itemPaddingX: #{rem(80)};
 
 		@include laptop {
@@ -18,68 +18,68 @@
 
 		@include mobile-above {
 			.bordered-grid_item {
-			&:nth-child(odd) {
-				padding-right: var(--itemPaddingX);
-				border-right: var(--border);
-			}
-			&:nth-child(even) {
-				@include full-vw-centered-line(
-					bottom,
-					auto,
-					100%,
-					50%
-				);
-
-				padding-left: var(--itemPaddingX);
-			}
-		}
-		}
-
-			@include mobile {
-				--columns: 1;
-
-				.bordered-grid_item:not(:last-child) {
-					border-bottom: var(--border);
+				&:nth-child(odd) {
+					padding-right: var(--itemPaddingX);
+					border-right: var(--border);
 				}
-			}		
-  }
+
+				&:nth-child(even) {
+					@include full-vw-centered-line(bottom,
+						auto,
+						100%,
+						50%);
+
+					padding-left: var(--itemPaddingX);
+				}
+			}
+		}
+
+		@include mobile {
+			--columns: 1;
+
+			.bordered-grid_item:not(:last-child) {
+				border-bottom: var(--border);
+			}
+		}
+	}
 
 
-  &-3-cols {
-    --columns: 3;
-    --itemPaddingX: #{rem(50)};
+	&-3-cols {
+		--columns: 3;
+		--itemPaddingX: #{rem(50)};
+		column-gap: calc(var(--itemPaddingX) * 2);
 
-    @include laptop {
-      --itemPaddingX: #{rem(40)};
-    }
+		@include laptop {
+			--itemPaddingX: #{rem(40)};
+		}
 
 		@include tablet-above {
-		.bordered-grid_item {
-      /*
+			.bordered-grid_item {
+
+				/*
 			выбирает элементы в 1-й и 2-й колонке
 			*/
-      &:nth-child(3n - 2),
-      &:nth-child(3n - 1) {
-        padding-right: var(--itemPaddingX);
-        border-right: var(--border);
-      }
+				&:nth-child(3n - 2),
+				&:nth-child(3n - 1) {
+					position: relative;
 
-      /*
-			выбираем элементы во второй колонке
-			*/
-      &:nth-child(3n - 1) {
-        @include full-vw-centered-line(bottom);
-      }
+					&::after {
+						content: '';
+						position: absolute;
+						top: 0;
+						left: calc(100% + var(--itemPaddingX));
+						width: rem(1);
+						height: 100%;
+						background-color: var(--color-dark-15);
 
-      /*
-		выбирает элементы в 2-й и 3-й колонке
-		*/
-      &:nth-child(3n - 1),
-      &:nth-child(3n) {
-        padding-left: var(--itemPaddingX);
-      }
-			
-    }
+					}
+				}
+
+				&:nth-child(3n - 1) {
+					@include full-vw-centered-line(bottom);
+				}
+
+			}
 		}
 
 		@include tablet {
@@ -89,11 +89,11 @@
 				border-bottom: var(--border);
 			}
 		}
+	}
 
-    
-  }
 
-  &_item {
-    padding-block: var(--itemPaddingY);
-  }
+	&_item {
+		padding-block: var(--itemPaddingY);
+	}
+	
 }
