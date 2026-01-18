@@ -1,9 +1,44 @@
 @use '../helpers/' as *;
 
 .metrics {
+
+	--columns: 3;
+
+	&-4-cols {
+		--columns: 4;
+		text-align: center;
+
+		@include tablet-above {
+			.metrics_item:nth-child(4n) {
+			padding-right: 0;
+		}
+		}
+
+		@include tablet {
+			--columns: 2;
+
+			padding-inline: 0;
+
+			.metrics_item {
+				border-bottom: var(--border);
+				
+				&:nth-child(odd) {
+					padding-left: var(--container-padding-x);
+				}
+
+				&:nth-child(even) {
+					padding-right: var(--container-padding-x);
+					border-right: none;
+				}
+			}
+		}
+
+		
+	}
+
 		&_list {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(var(--columns), 1fr);
 	}
 	&_item {
 		display: flex;
@@ -19,7 +54,7 @@
 
 		@include tablet {
 			row-gap: rem(0);
-			padding: rem(30);
+			padding: rem(20);
 			
 		}
 
