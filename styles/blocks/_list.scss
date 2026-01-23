@@ -1,7 +1,7 @@
 @use '../helpers/' as *;
 
 .list {
-
+	&,
 	&_item {
 		&:not(:last-child) {
 			border-bottom: var(--border);
