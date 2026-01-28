@@ -11,6 +11,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet" />
 
 	<link rel="stylesheet" href="./styles/main.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/imask/7.6.1/imask.min.js" defer></script>
 	<script src="./scripts/main.js" type="module" defer></script>
 </head>
 
@@ -169,7 +170,7 @@
 									<label class="field_label" for="phoneNumber">Phone Number</label>
 									<div class="field_body">
 										<div class="select">SELECT</div>
-										<input class="field_control" id="phoneNumber" placeholder="(111) 111-11-11">
+										<input class="field_control" id="phoneNumber" placeholder="(111) 111-11-11" data-js-input-mask="(000) 000-00-00">
 									</div>
 								</div>
 								<div class="feedback-form_cell feedback-form_cell-wide field">
@@ -213,8 +214,8 @@
 							</div>
 							<div class="card_body">
 								<div class="accordion-group">
-									<div class="accordion tile" open>
-										<details class="accordion_details" name="faq">
+									<div class="accordion tile">
+										<details class="accordion_details" name="faq" open>
 											<summary class="accordion_summary">
 												<h4 class="accordion_title h6"><span role="term" aria-details="fag-1">What is AI?</span></h4>
 											</summary>
@@ -228,7 +229,7 @@
 										</div>
 									</div>
 									<div class="accordion tile">
-										<details class="accordion_details" name="faq">
+										<details class="accordion_details" name="faq" open>
 											<summary class="accordion_summary">
 												<h4 class="accordion_title h6"><span role="term" aria-details="fag-2">How can I listen to your podcasts?</span></h4>
 											</summary>

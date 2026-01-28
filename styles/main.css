@@ -2424,8 +2424,25 @@ button[aria-label]::before {
 .accordion_details[open] .accordion_title::after {
   rotate: 0deg;
 }
+.accordion_details[open] + .accordion_content {
+  grid-template-rows: 1fr;
+}
+.accordion_details {
+  cursor: pointer;
+}
 .accordion_summary {
+  color: var(--color-light);
   list-style: none;
+}
+@media (any-hover: hover) {
+  .accordion_summary:hover {
+    color: var(--color-accent);
+  }
+}
+@media (any-hover: none) {
+  .accordion_summary:active {
+    color: var(--color-accent);
+  }
 }
 .accordion_summary::-webkit-details-marker {
   display: none;
@@ -2433,6 +2450,8 @@ button[aria-label]::before {
 .accordion_title {
   position: relative;
   padding-right: 3.125rem;
+  color: inherit;
+  transition-duration: var(--transition-duration);
 }
 .accordion_title::before, .accordion_title::after {
   position: absolute;
@@ -2448,6 +2467,20 @@ button[aria-label]::before {
 }
 .accordion_title::after {
   rotate: 90deg;
+}
+.accordion_content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition-duration: 0.3s;
+}
+.accordion_content-inner {
+  overflow: hidden;
+}
+.accordion_content-body {
+  --offsetTop: clamp(1rem, 0.8725490196rem + 0.522875817vw, 1.5rem);
+  margin-top: var(--offsetTop);
+  padding-top: var(--offsetTop);
+  border-top: var(--border);
 }
 
 /*# sourceMappingURL=main.css.map */

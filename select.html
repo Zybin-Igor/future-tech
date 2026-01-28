@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Future Tech | Contacts</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet" />
+
+	<link rel="stylesheet" href="./styles/main.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/imask/7.6.1/imask.min.js" defer></script>
+	<script src="./scripts/main.js" type="module" defer></script>
+</head>
+
+<body>
+	<header class="header" data-js-header>
+		<div class="header-promo">
+			<div class="header-promo-inner container">
+				<a class="header-promo-link" href="/">
+					<span class="icon icon-yellow-arrow">Subscribe to our Newsletter For New & latest Blogs and
+						Resources</span>
+				</a>
+			</div>
+		</div>
+		<div class="header-body">
+			<div class="header-body-inner container">
+				<a href="/" class="header-logo logo" aria-label="Home" title="Home">
+					<img src="./images/logo.svg" alt="" class="logo-image" width="179" height="50" />
+				</a>
+				<div class="header-overlay" data-js-header-overlay>
+					<nav class="header-menu">
+						<ul class="header-menu-list">
+							<li class="header-menu-item">
+								<a href="./index.html" class="header-menu-link">Home</a>
+							</li>
+							<li class="header-menu-item">
+								<a href="./news.html" class="header-menu-link">News</a>
+							</li>
+							<li class="header-menu-item">
+								<a href="./podcasts.html" class="header-menu-link ">Podcasts</a>
+							</li>
+							<li class="header-menu-item">
+								<a href="./resources.html" class="header-menu-link">Resources</a>
+							</li>
+						</ul>
+					</nav>
+					<a href="./contacts.html" class="header-contact-us-link button button-accent">Contact Us</a>
+				</div>
+				<button class="header-burger-button burger-button visible-mobile" type="button" aria-label="Open menu"
+					title="Open menu" data-js-header-burger-button>
+					<span class="burger-button_line"></span>
+					<span class="burger-button_line"></span>
+					<span class="burger-button_line"></span>
+				</button>
+			</div>
+		</div>
+	</header>
+	
+	<div class="container" style="width: 100%; max-width: 400px">
+		<div class="select field" data-js-select>
+			<label class="select_label"
+			id="phone-number-prefix-select-label"
+			for="phoneNumberPrefix"
+			>Phone number prefix</label>
+			<select class="select_original-control field_control" 
+			id="phoneNumberPrefix"
+			tabindex="-1" data-js-select-original-control>
+				<option value="+3" selected>+3</option>
+				<option value="+1">+1</option>
+				<option value="+2">+2</option>
+				<option value="+7">+7</option>
+			</select>
+			<div class="select_body">
+				<div class="select_button field_control"
+				tabindex="0"
+				role="combobox" 
+				aria-expanded="false"
+				aria-haspopup="listbox"
+				aria-controls="phone-number-prefix-select-dropdown"
+				aria-labelledby="phone-number-prefix-select-label"
+				data-js-select-button>+3</div>
+				<div class="select_dropdown" 
+				id="phone-number-prefix-select-dropdown"
+				role="listbox"
+				aria-labelledby="phone-number-prefix-select-label"
+				data-js-select-dropdown>
+					<div class="select_option is-selected"
+					id="phone-number-prefix-select-option-1"
+					role="option"
+					aria-selected="true"
+					data-js-select-option>+3</div>
+					<div class="select_option" id="phone-number-prefix-select-option-2" role="option" aria-selected="false" data-js-select-option>+1</div>
+					<div class="select_option" id="phone-number-prefix-select-option-3" role="option" aria-selected="false" data-js-select-option>+2</div>
+					<div class="select_option" id="phone-number-prefix-select-option-4" role="option" aria-selected="false" data-js-select-option>+7</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
