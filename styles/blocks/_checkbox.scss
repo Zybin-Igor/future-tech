@@ -36,6 +36,10 @@
 			--size: #{rem(24)};
 		}
 
+		&:user-invalid {
+			border-color: var(--color-red);
+		}
+
 		&:not(:checked) {
 			&::after {
 				@include hide;

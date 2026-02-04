@@ -466,6 +466,16 @@ button[aria-label]::before {
     padding-block: 0.875rem;
   }
 }
+@media (width <= 30.06125rem) {
+  .header-promo {
+    font-size: 0.75rem;
+  }
+}
+@media (width <= 30.06125rem) {
+  .header-promo-link .icon {
+    column-gap: 0.3125rem;
+  }
+}
 .header-body {
   padding-block: 1.5rem;
   background-color: var(--color-dark-10);
@@ -674,6 +684,16 @@ button[aria-label]::before {
     height: 3rem;
   }
 }
+@media (any-hover: hover) {
+  .soc1als-3-cols .soc1als_link:hover {
+    border-color: var(--color-accent);
+  }
+}
+@media (any-hover: none) {
+  .soc1als-3-cols .soc1als_link:active {
+    border-color: var(--color-accent);
+  }
+}
 .soc1als_list {
   display: flex;
   column-gap: 1.25rem;
@@ -803,7 +823,7 @@ button[aria-label]::before {
   grid-area: resources-preview;
   padding-left: 5rem;
   padding-bottom: 5rem;
-  background: url(../../images/resources-preview/bg.png) 0 0/cover no-repeat;
+  background: url(../../images/resources-preview/bg_tablet.png) 0 0/cover no-repeat;
 }
 @media (width <= 90.06125rem) {
   .hero_resources-preview {
@@ -897,6 +917,7 @@ button[aria-label]::before {
 .metrics_item {
   display: flex;
   flex-direction: column-reverse;
+  justify-content: start;
   row-gap: 0.625rem;
   padding: 3.125rem;
 }
@@ -2309,6 +2330,9 @@ button[aria-label]::before {
 .field_control::placeholder {
   color: var(--color-dark-40);
 }
+.field_control:user-invalid {
+  border-color: var(--color-red);
+}
 .field textarea.field_control {
   resize: vertical;
   min-height: 10.1875rem;
@@ -2500,6 +2524,9 @@ button[aria-label]::before {
   .checkbox_input {
     --size: 1.5rem;
   }
+}
+.checkbox_input:user-invalid {
+  border-color: var(--color-red);
 }
 .checkbox_input:not(:checked)::after {
   opacity: 0;

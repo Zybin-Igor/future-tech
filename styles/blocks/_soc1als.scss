@@ -24,8 +24,13 @@
 					border: var(--border);
 					border-radius: rem(6);
 					width: 100%;
+
 					@include laptop {
 						height: rem(48);
+					}
+
+					@include hover {
+						border-color: var(--color-accent);
 					}
 				}
 			}
