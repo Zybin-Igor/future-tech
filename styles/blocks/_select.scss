@@ -3,9 +3,9 @@
 .select {
 
 	&_original-control {
-
+		min-width: rem(100);
 		@include mobile-above {
-			// @include visually-hidden;
+			@include visually-hidden;
 		}
 	}
 
@@ -104,7 +104,7 @@
 
 		padding: rem(10);
 		border: var(--border);
-		border-radius:initial;
+		border-radius:inherit;
 
 		@include hover {
 			color: var(--color-accent);

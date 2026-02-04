@@ -136,8 +136,16 @@ class Select  extends BaseComponent {
 
 
 		get isNeedToExpand() {
+			const isButtonFocused = document.activeElement === this.buttonElement
 
+			return (!this.state.isExpanded && isButtonFocused)
 		}
+
+
+		selectCurrentOttion() {
+			this.state.selectedOptionElement = this.optionElements[this.state.currentOptionIndex]
+		}
+
 
 		onButtonClick = () => {
 			this.toggleExpandedState()
@@ -165,13 +173,44 @@ class Select  extends BaseComponent {
 
 		}
 
-		onArrowUpKeyDown = () => {}
+		onArrowUpKeyDown = () => {
+			if (this.isNeedToExpand) {
+				this.expand()
+				return
+			}
+			if (this.state.currentOptionIndex > 0) {
+				this.state.currentOptionIndex--
+			}
+		}
 
-		onArrowDownKeyDown = () => {}
+		onArrowDownKeyDown = () => {
+			if (this.isNeedToExpand) {
+				this.expand()
+				return
+			}
+			if (this.state.currentOptionIndex < this.optionElements.length - 1) {
+				this.state.currentOptionIndex++
+			}
+		}
 
-		onSpaceKeyDown = () => {}
+		onSpaceKeyDown = () => {
+			if (this.isNeedToExpand) {
+				this.expand()
+				return
+			}
 
-		onEnterKeyDown = () => {}
+			this.selectCurrentOttion()
+			this.collapse()
+		}
+
+		onEnterKeyDown = () => {
+			if (this.isNeedToExpand) {
+				this.expand()
+				return
+			}
+			this.selectCurrentOttion()
+			this.collapse()
+		}
 
 		onKeyDown = (event) => {
 			const { code } = event
@@ -193,11 +232,16 @@ class Select  extends BaseComponent {
 			this.updateTabIndexes(event.matches)
 		}
 
+		onOriginalControlChange = () => {
+			this.state.selectedOptionElement = this.optionElements[this.originalControlElement.selectedIndex]
+		}
+
 		bindEvents() {
 			MatchMedia.mobile.addEventListener('change', this.onMobileMatchMediaChange)
 			this.buttonElement.addEventListener('click', this.onButtonClick)
 			document.addEventListener('click', this.onClick)
 			this.rootElement.addEventListener('keydown', this.onKeyDown)
+			this.originalControlElement.addEventListener('change', this.onOriginalControlChange)
 		}
 	}
 

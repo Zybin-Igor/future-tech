@@ -1653,13 +1653,13 @@ button[aria-label]::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 2.5rem;
+  row-gap: 3.75rem;
   max-width: 31.25rem;
   margin-inline: auto;
 }
 @media (width <= 90.06125rem) {
   .review-card {
-    row-gap: 1.875rem;
+    row-gap: 3.125rem;
   }
 }
 .review-card_author {
@@ -2325,6 +2325,23 @@ button[aria-label]::before {
   }
 }
 
+.select_original-control {
+  min-width: 6.25rem;
+}
+@media (width > 47.99875rem) {
+  .select_original-control {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    clip-path: inset(100%) !important;
+    clip: rect(0 0 0 0) !important;
+    overflow: hidden !important;
+  }
+}
 .select_body {
   position: relative;
 }
@@ -2413,7 +2430,7 @@ button[aria-label]::before {
   column-gap: 0.625rem;
   padding: 0.625rem;
   border: var(--border);
-  border-radius: initial;
+  border-radius: inherit;
 }
 @media (any-hover: hover) {
   .select_option:hover {
